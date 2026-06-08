@@ -17,9 +17,12 @@ h1{
     background-color: aliceblue;
     padding: 50px; */
 /* } */
+
+
 video{
     width: 500px;
     background-color: aliceblue;
+    
 }
 
 .imgvideo{
@@ -38,11 +41,11 @@ video{
     font-style: normal;
 }
 
-nav{
+/* nav{
     display: flex;
     flex-direction: row;
     gap: 20px;
-}
+} */
 
 ol{
     list-style-type: upper-roman;
@@ -81,12 +84,12 @@ form{
     border-radius: 100px;
 }
 
-.grid{
+/* .grid{
     display:grid;
     width: 100%;
     grid-template-columns: 33% 33% 33%;
     
-}
+} */
 
 #one{
     /* grid-row: 1/2; */
@@ -119,3 +122,51 @@ form{
     display: grid;
     grid-template-columns: 50% 50%;
 }
+
+
+
+
+video{
+    /* width: 500px;
+    background-color: aliceblue; */
+    height: auto;
+    width: 100%;
+}
+
+img{
+    height: auto;
+        width: 100px;
+        background-color: rgb(75, 9, 40);
+        padding: 100px;
+}
+
+/* @media (max-width:600px){
+    img{
+        height: auto;
+        width: 100%;
+     
+    }
+} */
+
+.grid{
+    display: grid;
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+@media(min-width:1024px){
+    nav{
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+    }
+    .grid{
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+    }
+}
+
