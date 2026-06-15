@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Mobile First Navbar */
+nav{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+@media (min-width: 768px){
+    nav{
+        flex-direction: row;
+        gap: 30px;
+    }
+}
+
+/* Heading */
+h1{
+    margin-bottom: 20px;
+}
+
+/* Image */
+/* Even Roll No -> 50px */
+/* Odd Roll No -> 20px */
+img{
+    width: 500px;
+    border-radius:20px;
+    margin-bottom: 20px;
+}
+
+/* Video */
+/* Change blue to green/purple based on roll no */
+video{
+    padding: 10px;
+    width: 50vw;
+    background-color:purple;
+    display: block;
+    border-radius: 10px;
+}
+
+
+/* Table */
+table{
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+/* Button */
+button{
+    border: none;
+    padding: 12px 20px;
+    background-color:purple; /* Same as video */
+    color: white;
+    margin: 20px;
+    cursor: pointer;
+}
+
+button:hover{
+    opacity: 0.8;
+}
+
+/* Desktop First Grid */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+} 
+
+.item{
+    background-color: purple;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Mobile View */
+@media (max-width: 767px){
+    .grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
