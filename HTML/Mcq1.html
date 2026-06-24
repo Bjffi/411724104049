@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>OOPS Placement Test</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#f2f2f2;
+    padding:20px;
+}
+
+.container{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    max-width:700px;
+    margin:auto;
+}
+
+.option{
+    display:block;
+    width:100%;
+    text-align:left;
+    padding:10px;
+    margin:8px 0;
+    cursor:pointer;
+    border:1px solid #aaa;
+    border-radius:5px;
+    background:white;
+}
+
+.option:hover{
+    background:#ddd;
+}
+
+.correct{
+    background:lightgreen;
+}
+
+.wrong{
+    background:lightcoral;
+}
+
+#result{
+    font-size:25px;
+    font-weight:bold;
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+<h1>OOPS Placement Test</h1>
+
+<div id="quiz"></div>
+
+<button onclick="submitTest()">Submit Test</button>
+
+<h2 id="result"></h2>
+
+
+</div>
+
+
+<script>
+
+
+let questions=[
+
+{
+q:"1. OOPS stands for?",
+o:["Object Oriented Programming System",
+"Object Order Program System",
+"Only Object Programming",
+"None"],
+a:0
+},
+
+{
+q:"2. Which concept binds data and methods?",
+o:["Inheritance","Encapsulation","Polymorphism","Abstraction"],
+a:1
+},
+
+{
+q:"3. Object is an instance of?",
+o:["Method","Class","Variable","Constructor"],
+a:1
+},
+
+{
+q:"4. Which keyword creates object?",
+o:["new","class","static","this"],
+a:0
+},
+
+{
+q:"5. Inheritance keyword in Java?",
+o:["implements","extends","inherits","super"],
+a:1
+},
+
+{
+q:"6. Multiple inheritance is achieved using?",
+o:["Class","Interface","Constructor","Object"],
+a:1
+},
+
+{
+q:"7. Method overloading is?",
+o:["Runtime polymorphism",
+"Compile time polymorphism",
+"Encapsulation",
+"Inheritance"],
+a:1
+},
+
+{
+q:"8. Method overriding is?",
+o:["Compile time",
+"Runtime",
+"Constructor",
+"Variable"],
+a:1
+},
+
+{
+q:"9. Abstract class object can be created?",
+o:["Yes","No","Only static","Always"],
+a:1
+},
+
+{
+q:"10. Interface uses keyword?",
+o:["extends","implements","new","super"],
+a:1
+},
+
+
+{
+q:"11. Constructor name should be same as?",
+o:["Object","Class","Method","Variable"],
+a:1
+},
+
+{
+q:"12. Private members support?",
+o:["Inheritance","Encapsulation","Polymorphism","Interface"],
+a:1
+},
+
+{
+q:"13. Which hides implementation?",
+o:["Abstraction","Inheritance","Class","Object"],
+a:0
+},
+
+{
+q:"14. Parent class reference holding child object is?",
+o:["Overloading","Upcasting","Downcasting","Constructor"],
+a:1
+},
+
+{
+q:"15. Which keyword refers current object?",
+o:["this","super","new","static"],
+a:0
+},
+
+{
+q:"16. super keyword refers?",
+o:["Child class","Parent class","Object","Method"],
+a:1
+},
+
+{
+q:"17. Final class cannot be?",
+o:["Created","Inherited","Used","Called"],
+a:1
+},
+
+{
+q:"18. Java supports which inheritance?",
+o:["Single","Multiple class",
+"Hybrid only","None"],
+a:0
+},
+
+{
+q:"19. Polymorphism means?",
+o:["Many forms","One form","Data hiding","Binding"],
+a:0
+},
+
+{
+q:"20. Data hiding is achieved by?",
+o:["Private","Public","Static","Final"],
+a:0
+}
+
+
+];
+
+
+let quiz=document.getElementById("quiz");
+
+
+questions.forEach((item,index)=>{
+
+quiz.innerHTML+=`
+
+<div>
+<h3>${item.q}</h3>
+
+${item.o.map((x,i)=>
+
+`<button class="option" 
+onclick="answer(this,${index},${i})">
+${x}
+</button>`
+
+).join("")}
+
+</div>
+
+`;
+
+});
+
+
+let score=0;
+
+
+function answer(btn,q,opt){
+
+let buttons=btn.parentElement.querySelectorAll("button");
+
+
+buttons.forEach(b=>{
+    b.disabled=true;
+});
+
+
+if(opt==questions[q].a){
+
+btn.classList.add("correct");
+score++;
+
+}
+else{
+
+btn.classList.add("wrong");
+
+buttons[questions[q].a].classList.add("correct");
+
+}
+
+}
+
+
+
+function submitTest(){
+
+document.getElementById("result").innerHTML=
+"Your Score: "+score+"/20";
+
+}
+
+
+</script>
+
+
+</body>
+</html>
